@@ -10,8 +10,16 @@ import Foundation
 class MenuController {
     
     static let shared = MenuController()
+    var order = Order() {
+        didSet {
+            NotificationCenter.default.post(name: MenuController.orderUpdatedNotification, object: nil)
+            print("setting order")
+        }
+    }
     
     let baseURL = URL(string: "http://localhost:8080/")!
+    
+    static let orderUpdatedNotification = Notification.Name("MenuController.orderUpdated")
     
     func fetchCategories(completion: @escaping (Result<[String], Error>) -> Void) {
         let categoriesURL = baseURL.appendingPathComponent("categories")
@@ -21,7 +29,7 @@ class MenuController {
                 do {
                     let jsonDecoder = JSONDecoder()
                     let categoriesResponse = try
-                    jsonDecoder.decode(CategoryResponse.self,
+                    jsonDecoder.decode(CategoriesResponse.self,
                                        from: data)
                     completion(.success(categoriesResponse.categories))
                 } catch {
@@ -70,7 +78,7 @@ class MenuController {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let data = ["menuIDs": menuIDs]
+        let data = ["menuIds": menuIDs]
         let jsonEncoder = JSONEncoder()
         let jsonData = try? jsonEncoder.encode(data)
         request.httpBody = jsonData

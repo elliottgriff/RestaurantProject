@@ -15,6 +15,7 @@ class MenuTableViewController: UITableViewController {
     init?(coder: NSCoder, category: String) {
         self.category = category
         super.init(coder: coder)
+        self.title = self.category.capitalized
     }
     
     required init?(coder: NSCoder) {
@@ -50,7 +51,6 @@ class MenuTableViewController: UITableViewController {
         }
     }
 
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -69,18 +69,10 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
     
-    var priceFormatter: NumberFormatter {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = "$"
-        
-        return formatter
-    }
-    
     func configure(_ cell: UITableViewCell, forItemAt indexPath: IndexPath) {
         let menuItem = menuItems[indexPath.row]
         cell.textLabel?.text = menuItem.name
-        cell.detailTextLabel?.text = priceFormatter.string(from: NSNumber(value: menuItem.price))
+        cell.detailTextLabel?.text = MenuItem.priceFormatter.string(from: NSNumber(value: menuItem.price))
     }
 
     @IBSegueAction func showMenuItem(_ coder: NSCoder, sender: Any?) -> MenuItemDetailViewController? {
