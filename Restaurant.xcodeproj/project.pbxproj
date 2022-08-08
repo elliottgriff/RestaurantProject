@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0B543028A0A34D000EF2D8 /* Restoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0B542F28A0A34D000EF2D8 /* Restoration.swift */; };
 		4F1AC9E7289DCA9E00E58329 /* OrderConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AC9E6289DCA9E00E58329 /* OrderConfirmationViewController.swift */; };
 		4F2D201E289AE00D006DF695 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D201D289AE00D006DF695 /* AppDelegate.swift */; };
 		4F2D2020289AE00D006DF695 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2D201F289AE00D006DF695 /* SceneDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F0B542F28A0A34D000EF2D8 /* Restoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restoration.swift; sourceTree = "<group>"; };
 		4F1AC9E6289DCA9E00E58329 /* OrderConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmationViewController.swift; sourceTree = "<group>"; };
 		4F2D201A289AE00D006DF695 /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2D201D289AE00D006DF695 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -122,7 +124,6 @@
 				4F2D2050289AE01F006DF695 /* Model */,
 				4F2D201D289AE00D006DF695 /* AppDelegate.swift */,
 				4F2D201F289AE00D006DF695 /* SceneDelegate.swift */,
-				4F2D2023289AE00D006DF695 /* Main.storyboard */,
 				4F2D2029289AE00F006DF695 /* Assets.xcassets */,
 				4F2D202B289AE00F006DF695 /* LaunchScreen.storyboard */,
 				4F2D202E289AE00F006DF695 /* Info.plist */,
@@ -154,6 +155,7 @@
 				4F2D205B289AE764006DF695 /* MenuItem.swift */,
 				4F2D205D289AEAFC006DF695 /* ResponseModels.swift */,
 				4F2D205F289AEBAB006DF695 /* Order.swift */,
+				4F0B542F28A0A34D000EF2D8 /* Restoration.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +163,7 @@
 		4F2D2051289AE026006DF695 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4F2D2023289AE00D006DF695 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				4F2D205E289AEAFC006DF695 /* ResponseModels.swift in Sources */,
 				4F1AC9E7289DCA9E00E58329 /* OrderConfirmationViewController.swift in Sources */,
 				4F2D205C289AE764006DF695 /* MenuItem.swift in Sources */,
+				4F0B543028A0A34D000EF2D8 /* Restoration.swift in Sources */,
 				4F2D2058289AE49D006DF695 /* OrderTableViewController.swift in Sources */,
 				4F2D2054289AE485006DF695 /* CategoryTableViewController.swift in Sources */,
 			);

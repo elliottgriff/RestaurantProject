@@ -5,7 +5,7 @@
 //  Created by elliott on 8/3/22.
 //
 
-import Foundation
+import UIKit
 
 class MenuController {
     
@@ -13,9 +13,11 @@ class MenuController {
     var order = Order() {
         didSet {
             NotificationCenter.default.post(name: MenuController.orderUpdatedNotification, object: nil)
-            print("setting order")
+            userActivity.order = order
         }
     }
+    
+    var userActivity = NSUserActivity(activityType: "com.ecgriffin.Restaurant.order")
     
     let baseURL = URL(string: "http://localhost:8080/")!
     
@@ -101,9 +103,18 @@ class MenuController {
             
         }
         task.resume()
-        
     }
     
-    
-    
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url)
+        { (data, response, error) in
+            if let data = data,
+               let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                completion(nil)
+            }
+        }
+        task.resume()
+    }
 }
