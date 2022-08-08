@@ -20,6 +20,11 @@ class OrderTableViewController: UITableViewController {
             name: MenuController.orderUpdatedNotification, object: nil)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        MenuController.shared.updateUserActivity(with: .order)
+    }
 
     // MARK: - Table view data source
 

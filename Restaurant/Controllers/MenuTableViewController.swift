@@ -33,7 +33,11 @@ class MenuTableViewController: UITableViewController {
                 self.displayError(error, title: "Failed to Fetch Menu Items for \(self.category)")
             }
         }
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        MenuController.shared.updateUserActivity(with: .menu(category: category))
     }
     
     func updateUI(with menuItems: [MenuItem]) {
